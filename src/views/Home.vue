@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-if="isHomeLoaded">
     <div class="big-points">
       <div class="big-question">Need to make a web/mobile application?</div>
       <div class="big-answer">We are here to help</div>
@@ -16,12 +16,24 @@
 <script>
 // @ is an alias to /src
 
-
 export default {
   name: 'Home',
+  data(){
+    return{
+      isHomeLoaded:'false'
+    }
+  },
   components: {
     
-  }
+  },
+  mounted(){
+        document.onreadystatechange = () => {
+            if(document.readyState == "complete"){
+                this.isLoaded = true;
+            }
+        }
+        
+    } 
 }
 </script>
 <style>
