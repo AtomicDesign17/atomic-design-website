@@ -3,20 +3,14 @@
     <div class="page-loader" v-if="!isLoaded">
        <moon-loader :color="color"></moon-loader>
     </div>
-    <div class="header">    
+    <div class="header">
         <img class="logo" src="./assets/logo250x100.png">
         <b-nav tabs fill>
           <b-nav-item to="/" exact exact-active-class="active">Home</b-nav-item>
           <b-nav-item to="/about" exact exact-active-class="active">About</b-nav-item>
           <b-nav-item to="/packages" exact exact-active-class="active">Packages</b-nav-item>
           <b-nav-item to="/contract" exact exact-active-class="active">Contact Us</b-nav-item>
-        </b-nav>
-        <!-- <div id="nav">
-            <router-link to="/">Home</router-link> 
-            <router-link to="/about">About</router-link> 
-            <router-link to="/packages">Packages</router-link> 
-            <router-link to="/contact">Contact Us</router-link>
-        </div> -->
+        </b-nav>        
     </div>
     <div class="body" v-if="isLoaded" >
       <router-view/>
