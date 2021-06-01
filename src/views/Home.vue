@@ -1,14 +1,31 @@
 <template>
-  <div class="home" v-if="isHomeLoaded">
-    <div class="big-points">
-      <div class="big-question">Need to make a web/mobile application?</div>
-      <div class="big-answer">We are here to help</div>
-    </div>
-    <div class="web-design-section">
-      <img class="web-design-layout" src="../assets/web-layout.png">
-    </div>
-    <div class="mobile-design-section">
-      <img class="mobile-design-layout" src="../assets/mobile-layout.png">
+  <div class="home" v-if="isHomeLoaded">      
+    <div class="image-container">
+      <img class="big-image" src="../assets/home-page-photo.jpg" alt="Home Page Image">  
+      <div class="question-text">Need to build a website?</div> 
+      <div class="answer-text">We are here to help</div>
+      <router-link to="/packages" tag="button" class="image-button">Checkout our Packages</router-link>
+    </div> 
+    <div class="services">
+      <h2 class="heading">Our Services</h2>
+      <div class="services-grid">
+        <div class="grid-item">
+          <img class="grid-image" src="../assets/services-grid-1.svg">
+          <label class="grid-label">Fast and secure Web development</label>
+        </div>
+        <div class="grid-item">
+          <img class="grid-image" src="../assets/services-grid-2.svg">
+          <label class="grid-label">Fast and secure Web development</label>
+        </div>
+        <div class="grid-item">
+          <img class="grid-image" src="../assets/services-grid-2.svg">
+          <label class="grid-label">Fast and secure Web development</label>
+        </div>
+        <div class="grid-item">
+          <img class="grid-image" src="../assets/services-grid-2.svg">
+          <label class="grid-label">Fast and secure Web development</label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,41 +54,58 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 .home{
   padding-top: 1rem;
   text-align: center;
 }
-.big-points{
-  background-color: #FF9933;
-  color: #FFF;
+.image-container{
+  width:100%;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-family: 'Noto Serif', serif;  
 }
-.big-question{
+.big-image{
+  width: 100%;
+}
+.question-text{
+  position: absolute;
+  top: 2.5vw;
+  right: 3%;
+  font-size: 3.7vw;  
   font-weight: bold;
-  font-size: 40px;
 }
-.big-answer{
-  font-size: 40px;
-  padding-top: 1rem;
+.answer-text{  
+  position:absolute;
+  top: 7.5vw;
+  right: 3%;
+  font-size: 3.2vw;
 }
-.web-design-section{
-  margin-top: 1rem;
-  padding:1rem 0rem 1rem 0rem;
-  text-align: left;
-  background-color: #B3B3B3 ;
+.image-button{
+  position:absolute;
+  top: 13vw;
+  right: 3%;
+  padding: 0.6rem 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.15vw;
+  font-weight: bold;
 }
-.web-design-layout{
-  width:30%;
-  height:auto;
-  padding-left: 1rem;
+.services-grid{
+  display: grid;
+  grid-template-columns: auto auto;  
+  padding: 10px;
 }
-.mobile-design-section{
-  margin-top: 1rem;
-  padding:1rem 0rem 1rem 0rem;
-  text-align: right;
-  background-color: #B3B3B3 ;
+.grid-image{
+  width:80%;
 }
-.mobile-design-layout{
-  width: 15%;
-  padding-right: 1rem;
+.heading {
+  font-size: 3vw;
+  font-weight: bold;
 }
+.grid-label{
+  font-size: 1.8vw;
+}
+
 </style>
